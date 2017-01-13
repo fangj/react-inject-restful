@@ -1,0 +1,23 @@
+{
+  "name": "react-inject-restful",
+  "version": "1.0.0",
+  "description": "inject restful api or data as props to react component",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fangj/react-inject-restful.git"
+  },
+  "keywords": [
+    "react",
+    "restful"
+  ],
+  "author": "FangJian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fangj/react-inject-restful/issues"
+  },
+  "homepage": "https://github.com/fangj/react-inject-restful#readme"
+}
