@@ -38,17 +38,17 @@ const injectApi=(url)=>{
 const _injectValue=(url,injectedV,names)=>{
   const api=restful(url);
   const promise=api.all();
-  const V=pv(promise)(injectedV,names);
+  const V=pv(promise,names)(injectedV);
   return V;
 }
-const injectValue=(url)=>{
-  return (injectedV,names)=>_injectValue(url,injectedV,names);
+const injectValue=(url,names)=>{
+  return (injectedV)=>_injectValue(url,injectedV,names);
 }
 
 const _injectValueApi=(url,injectedV,names={api:"api"})=>{
   const api=restful(url);
   const promise=api.all();
-  const V=pv(promise)(injectedV,names);
+  const V=pv(promise,names)(injectedV);
   return (props)=>{
     const others={};
     others[names.api]=api;
@@ -56,8 +56,8 @@ const _injectValueApi=(url,injectedV,names={api:"api"})=>{
   };
 }
 
-const injectValueApi=(url)=>{
-  return (injectedV,names)=>_injectValueApi(url,injectedV,names);
+const injectValueApi=(url,names)=>{
+  return (injectedV)=>_injectValueApi(url,injectedV,names);
 }
 
 export {injectApi,injectValue,injectValueApi}
